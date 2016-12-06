@@ -1,11 +1,11 @@
 <template>
   <div class="footer">
-    <md-bottom-bar class="md-accent" v-md-theme="'indigo'" md-shift>
+    <md-bottom-bar md-shift v-md-theme="playground.theme">
       <!--<md-bottom-bar-item md-icon="ondemand_video">电影</md-bottom-bar-item>-->
       <!--<md-bottom-bar-item md-icon="music_note">音乐</md-bottom-bar-item>-->
       <!--<md-bottom-bar-item md-icon="books" md-active>阅读</md-bottom-bar-item>-->
       <!--<md-bottom-bar-item md-icon="photo">图片</md-bottom-bar-item>-->
-      <md-bottom-bar-item v-for="(item, index) in tabs" :md-icon="item.icon">{{item.text}}</md-bottom-bar-item>
+      <md-bottom-bar-item v-for="(item, index) in tabs" :md-icon="item.icon" @click.native="setTheme(item.theme)">{{item.text}}</md-bottom-bar-item>
     </md-bottom-bar>
   </div>
 </template>
@@ -26,10 +26,18 @@
     name: 'footer',
     data () {
       return {
-        tabs: this.$root.tabs
+        tabs: this.$root.tabs,
+        playground: {
+          theme: 'indigo'
+        }
       }
     },
     components: {
+    },
+    methods: {
+      setTheme: function (theme) {
+        this.playground.theme = theme
+      }
     }
   }
 </script>

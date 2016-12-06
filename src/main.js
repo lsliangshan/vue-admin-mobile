@@ -7,12 +7,10 @@ Vue.use(VueMaterial)
 
 Vue.material.theme.registerAll({
   default: {
-    primary: 'cyan',
-    accent: 'pink'
+    primary: 'deep-orange'
   },
   indigo: {
-    primary: 'indigo',
-    accent: 'pink'
+    primary: 'green'
   },
   teal: {
     primary: 'teal',
@@ -29,12 +27,12 @@ new Vue({
       {
         'icon': 'ondemand_video',
         'text': '电影',
-        'theme': 'indigo'
+        'theme': 'default'
       },
       {
         'icon': 'music_note',
         'text': '音乐',
-        'theme': 'brown'
+        'theme': 'indigo'
       },
       {
         'icon': 'books',
